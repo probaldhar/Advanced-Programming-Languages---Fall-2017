@@ -1,0 +1,9 @@
+make
+./compiler < legal1.txt
+./compiler < legal2.txt
+./compiler < legal3.txt
+./compiler < legal4.txt
+./compiler < illegal1.txt
+./compiler < illegal2.txt
+./compiler < illegal3.txt
+./compiler < illegal4.txt

@@ -1,0 +1,16 @@
+begin
+int i;
+int j;
+
+read(i);
+read(j);
+
+i = 10;
+
+i = j;
+
+i = 10 + i;
+j = 10 + i;
+
+
+end;

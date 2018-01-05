@@ -1,0 +1,18 @@
+begin
+int a;
+int b;
+a = a+b;
+if(1)
+	a = (8+9)*(a+b);
+	b=a;
+else 
+	a = 10 + b;
+endif
+
+while(a<10)
+	a = a + 1;
+endwhile
+
+~commented line
+
+end;

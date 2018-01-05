@@ -1,0 +1,9 @@
+begin
+int a;
+a+b;
+a<=b;
+if(a=10)
+	a = 8+9;
+	b=a;
+endif
+end;

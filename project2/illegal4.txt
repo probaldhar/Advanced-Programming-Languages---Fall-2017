@@ -1,0 +1,20 @@
+int i;
+int j;
+
+read(i);
+read(j);
+
+while ( i != j )
+	
+	if ( i > j )
+		i = i - j
+	else
+		j = j - i;
+	endif
+
+endwhile
+
+write(i);
+
+
+end;

@@ -1,0 +1,87 @@
+<!DOCTYPE doctype PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html><head>
+
+
+
+
+
+
+
+
+        
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+  <meta name="Author" content="John coffey">
+        
+  <meta name="GENERATOR" content="Mozilla/4.61 [en] (WinNT; U) [Netscape]"><title>Advanced Programming Languages Projects</title></head><body>
+<center><b><span size="+1" style="font-size: xx-small;">Advanced Programming languages</span></b> <br /> <b><span size="+1" style="font-size: xx-small;">Programming Projects</span></b></center><hr width="100%" />
+<p><b>A Compiler Project</b></p>
+<p>The goals of this project is to design a simple but Turing Computable programming language and to implement a compiler for the language. For project 1, the compiler will scan, parse and report if the program is legal or not.</p>
+<p><b>Policies:</b> <br />This project will use the C programming language. It will be a recursive descent parser.</p>
+<p><a href="http://www.uwf.edu/jcoffey\parser.zip" target="_blank" rel="noopener noreferrer">Click this link for the template parser</a></p>
+<p>Your compiler should take input of the source code from a file.</p>
+<p>At a minimum, you must implement the following language features:</p>
+<ul>
+<li>A main method</li>
+<li>Variable declarations (with a policy: do all declarations come first or can they be intermingled with executable statements)</li>
+<li>An iterator</li>
+<li>A selector</li>
+<li>An assignment statement</li>
+<li>Evaluation of nested arithmetic expressions</li>
+<li>A general solution with regard to comparison operators</li>
+<li>Provision of an integer data type</li>
+<li>Provision for numeric constants</li>
+<li>A syntactic element to place comments in the code</li>
+</ul>
+<p>&nbsp;Project 1 requires a symbol table. The template version has a minimal, simple table with:</p>
+<p>1. An abstract data type comprised of:</p>
+<p><span style="font-family: 'courier new', courier, sans-serif;">&nbsp; &nbsp; struct entry {</span></p>
+<div>
+<div><span style="font-family: 'courier new', courier, sans-serif;">&nbsp; &nbsp; &nbsp; char *lexptr;</span></div>
+<div><span style="font-family: 'courier new', courier, sans-serif;">&nbsp; &nbsp; &nbsp; int token;</span></div>
+<div><span style="font-family: 'courier new', courier, sans-serif;">&nbsp; &nbsp; };</span></div>
+<div></div>
+<div>
+<div><span style="font-family: 'courier new', courier, sans-serif;">&nbsp; &nbsp; struct entry symtable[SYMMAX];</span></div>
+<div><span style="font-family: 'courier new', courier, sans-serif;">&nbsp; &nbsp; char lexemes[STRMAX];</span></div>
+<div></div>
+<div>2.&nbsp;three (very typical) functions:</div>
+</div>
+</div>
+<div><span style="font-family: 'courier new', courier, sans-serif;">&nbsp; &nbsp; void init();</span></div>
+<div><span style="font-family: 'courier new', courier, sans-serif;">&nbsp; &nbsp; int lookup(char s[]);</span></div>
+<div><span style="font-family: 'courier new', courier, sans-serif;">&nbsp; &nbsp; int insert(char s[], int tok)</span></div>
+<p>Modify this symboltable to create an externally chained hash table for insertion and lookup. Modify struct entry as needed. Eliminate use of char lexemes[STRMAX]. The signatures of insert() and lookup() will remain the same, but will have different semantics. Specifically, they will now return success or failure (essentially booleans). You will add accessor functions to get the current token type or lexeme. Note that this change will have ripple effects in the lexer, parser, and emitter.&nbsp;<span style="font-family: 'courier new', courier, sans-serif;">tokenval</span> will continue to hold the value of a numeric literal.</p>
+<p style="margin-top: 0px; margin-bottom: 0px;">&nbsp;</p>
+<p style="margin-top: 0px; margin-bottom: 0px;">A word about identifiers:</p>
+<p style="margin-top: 0px; margin-bottom: 0px;">&nbsp;</p>
+<p style="margin-top: 0px; margin-bottom: 0px;">A legal <tt>&lt;identifier&gt;</tt> will start with a letter followed by combinations of letters, numbers, and underscores, subject to the following two rules:</p>
+<p style="margin-top: 0px; margin-bottom: 0px;">&nbsp;</p>
+<p style="margin-top: 0px; margin-bottom: 0px;">1. You cannot have consecutive underscores</p>
+<p style="margin-top: 0px; margin-bottom: 0px;">2. An identifier cannot end with an underscore.</p>
+<p>These are valid identifiers: <br /> &nbsp;&nbsp;&nbsp;<tt>&nbsp; <span style="font-family: 'courier new', courier, sans-serif;">e123, e, qwert5yuio, a_b_7</span></tt></p>
+<p>These are not:</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-family: 'courier new', courier, sans-serif;">e__7, abc_&nbsp;</span></p>
+<p>You are certainly invited but not required to extend the basic capabilities of your compiler. Here are some examples of what you might add:</p>
+<ul>
+<li>Additional data types such as float, char, etc</li>
+<li>Subprograms</li>
+<li>An indexing mechanism to handle arrays.</li>
+<li>Pointers and dynamic allocation (we are allowed to make some assumptions regarding memory management)</li>
+</ul>
+<p><b>Input and Output<br /> </b>There will be no user interaction with the program. The program will be invoked 8 times from a shell script as demonstrated in class (see below in deliverables). Input will be via commandline parameter of the file to be parsed, specified in the script file. Output will be to the console reporting either a successful parse or a syntax error and the line on which the error was detected.<b><br /> <br /> Other Policies</b> <br /> All projects will be individual.</p>
+<p><b>Deliverables:</b><span style="font-weight: bold;"><br /> </span></p>
+<p>You will submit all your work bundled up in WinZip (on PC) to the DropBox for the course on <tt>elearning.uwf.edu. </tt>Please make your name is very clear on the zipfile you upload and inside all files contained within the zipfile. Place all your files in a single directory named <span style="font-family: monospace;">&lt;firstInitial&gt;&lt;lastname&gt;-p&lt;projNumber&gt;.</span> For instance, my&nbsp; submission would be<span style="font-family: monospace;"> jcoffey-p1. </span>zip that folder into a .zip file and upload it to the appropriate dropbox.</p>
+<p>So, submit a single zip file containing a single folder, with the following items in the folder:<span style="font-weight: bold;"></span></p>
+<ul>
+<li>The grammar for your language</li>
+<li>Source code for the lexical analyzer and parser portion of your program</li>
+<li>Design documents for this part of the project</li>
+<li>A User's manual regarding exactly what this submission does and how to run it</li>
+<li>Four examples each of both <span style="font-style: italic;">legal</span> and <span style="font-style: italic;">illegal</span> programs. The programs should be of increasing complexity, with the last demonstrating all features of your language.</li>
+<li>A script that compiles all legal and illegal programs as a batch, providing an indication that the compile was a success or appropriate error messages.</li>
+<li>A <span style="font-family: monospace;">makefile</span> to build your project</li>
+</ul>
+<hr />
+<p></p>
+</body></html>

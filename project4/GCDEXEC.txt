@@ -1,0 +1,12 @@
+Program to run GCD as an external program
+c:\\test\\<yourFolderName>\\gcd.exe 1983 1530
+~
+4
+20 0
+14
+18
+1
+main
+0 0 0
+1
+C:\\test\\pdhar-p4\\gcd.exe 1983 1530

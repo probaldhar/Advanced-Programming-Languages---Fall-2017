@@ -1,0 +1,71 @@
+//.def gcd: ARGS=2
+			LOAD, 0,                 //0
+			LOAD, 1,                 //2
+			IEQ,                     //4
+			BRF, 10,                  //5
+			LOAD, 0,                 //7
+			RET,                     //9
+
+			LOAD, 0,				 //10
+			LOAD, 1,                 //12
+			ILT,                     //14
+			// IF j < i
+			BRF, 26,                 //15
+
+			LOAD, 1,				 //17
+			LOAD, 0,                 //19
+			ISUB,                    //21
+			STORE, 1,                //22
+			BR, 0,					 // 24
+
+			// if i < j
+			LOAD, 0,                //26
+			LOAD, 1,                //28
+			ISUB,                   //30
+			STORE, 0,               //31
+			BR,0,                   //33
+
+
+			// main
+			// load i
+			ICONST, 1983,              //35
+			// load j
+			ICONST, 1530,             //37
+			CALL, GCD_INDEX,        //39
+			PRINT,                  //41
+			HALT,                   //42
+~
+43
+10 0
+10 1
+5
+8 10
+10 0
+17
+10 0
+10 1
+4
+8 26
+10 1
+10 0
+2
+12 1
+6 0
+10 0
+10 1
+2
+12 0
+6 0
+9 1983
+9 1530
+16 1
+14
+18
+2
+main
+0 0 35
+gcdfunc
+2 0 0
+2
+"literal pool 1"
+"hello world"

@@ -1,0 +1,15 @@
+This collection demonstrates the basics of getting lex and yacc to work 
+together. You can execute the demo by first building the application issuing:
+
+$  make <enter>
+
+to run the makefile.
+
+Then, you can execute the parser using imput redirection of the test file t1 
+(which is provided) by issuing the command:
+
+$ ./final < t1  <enter>
+
+About the makefile
+final depends on lex.yy.c AND y.tab.c but lex.yy.c is not compiled
+in the final build because lex.yy.c is included in y.tab.c

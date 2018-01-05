@@ -1,0 +1,8 @@
+begin
+	int a;
+	a = 10;
+	~this is a comment
+	if ( 10 + 20 )
+		a = a + 1;
+	endif
+end
