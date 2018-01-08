@@ -1,5 +1,5 @@
-final:	main.o emitter.o parser.o lexer.o symbol.o error.o 
-	gcc -o final main.o emitter.o parser.o lexer.o symbol.o error.o
+compiler:	main.o emitter.o parser.o lexer.o symbol.o error.o 
+	gcc -o compiler main.o emitter.o parser.o lexer.o symbol.o error.o
 
 main.o:	main.c global.h
 	gcc -c main.c
@@ -20,4 +20,4 @@ error.o:error.c global.h
 	gcc -c error.c
 
 clean: 
-	rm final *.o
+	rm compiler *.o

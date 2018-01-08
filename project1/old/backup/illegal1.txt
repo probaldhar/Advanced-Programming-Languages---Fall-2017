@@ -1,4 +1,0 @@
-begin
-int a;
-a+b;
-a<=b;
